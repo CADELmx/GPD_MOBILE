@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
+import { Button } from "react-native-paper";
 
 export default function LoginView() {
   const [email, setEmail] = useState('');
@@ -34,17 +35,17 @@ export default function LoginView() {
           secureTextEntry={true}
         />
 
-        <TouchableOpacity style={styles.button}>
-          <Link href={"/programDirector/home"} style={styles.textbutton}>
+        <Button mode="contained-tonal" buttonColor="#309b7b" style={{borderRadius:5}}>
+          <Link href={"/programDirector/home"}>
             Registrarse D.C.
           </Link>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Link href={"/academicSecretary/home"} style={styles.textbutton}>
+        </Button>
+
+        <Button mode="contained-tonal" buttonColor="#309b7b" style={{borderRadius:5}}>
+          <Link href={"/academicSecretary/home"}>
             Registrarse S.A.
           </Link>
-        </TouchableOpacity>
-
+        </Button>
       </View>
     </ScrollView>
   );
