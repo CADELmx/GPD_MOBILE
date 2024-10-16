@@ -1,7 +1,7 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Button } from "react-native-paper";
+import { Button, TextInput} from "react-native-paper";
 
 export default function LoginView() {
   const [email, setEmail] = useState('');
@@ -27,21 +27,21 @@ export default function LoginView() {
         
         <Text style={styles.label}>Contraseña</Text>
         <TextInput
-          style={styles.input}
+          dense
+          mode="outlined"
           placeholder="Ingresa tu contraseña"
-          placeholderTextColor="#32CD32"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
         />
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" style={{borderRadius:5}}>
+        <Button mode="contained-tonal" buttonColor="#309b7b" style={styles.button}>
           <Link href={"/programDirector/home"}>
             Registrarse D.C.
           </Link>
         </Button>
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" style={{borderRadius:5}}>
+        <Button mode="contained-tonal" buttonColor="#309b7b" style={styles.button}>
           <Link href={"/academicSecretary/home"}>
             Registrarse S.A.
           </Link>
@@ -88,15 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0FFF0',
   },
   button: {
-    width: '50%',
-    backgroundColor: '#32CD32',
     borderRadius: 5,
-    paddingVertical: 10,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  textbutton: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    margin: 2
   }
 });
