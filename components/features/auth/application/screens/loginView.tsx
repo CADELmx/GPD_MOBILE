@@ -1,47 +1,49 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
-import { Button, TextInput} from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 
 export default function LoginView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
-        <Image 
-          style={styles.userImage} 
+    <ScrollView contentContainerStyle={globalStyles.scrollContainer}>
+      <View style={globalStyles.container}>
+        <Image
+          style={globalStyles.userImage}
           source={require('../../../../../assets/images/foto.png')} // Imagen de ejemplo
         />
 
-        <Text style={styles.label}>Correo electrónico</Text>
         <TextInput
-          style={styles.input}
+          dense
+          mode="outlined"
+          label='Correo electrónico'
           placeholder="Ingresa tu correo"
-          placeholderTextColor="#32CD32"
+          activeOutlineColor="#309b7b"
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
         />
-        
-        <Text style={styles.label}>Contraseña</Text>
+
         <TextInput
           dense
           mode="outlined"
+          activeOutlineColor="#309b7b"
+          label='Contraseña'
           placeholder="Ingresa tu contraseña"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
         />
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" style={styles.button}>
+        <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
           <Link href={"/programDirector/home"}>
             Registrarse D.C.
           </Link>
         </Button>
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" style={styles.button}>
+        <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
           <Link href={"/academicSecretary/home"}>
             Registrarse S.A.
           </Link>
@@ -51,7 +53,7 @@ export default function LoginView() {
   );
 }
 
-const styles = StyleSheet.create({
+export const globalStyles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'center',
@@ -59,11 +61,13 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    flexBasis: 'auto',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 20,
-    paddingTop: 80,
+    alignContent: 'center',
+    justifyContent: 'center',
+    columnGap: 2,
+    rowGap: 10
   },
   userImage: {
     width: 150,
@@ -71,24 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 70,
     marginBottom: 20,
   },
-  label: {
-    color: '#32CD32', 
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  input: {
-    width: '100%',
-    height: 40,
-    borderColor: '#32CD32',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-    backgroundColor: '#F0FFF0',
-  },
   button: {
     borderRadius: 5,
-    margin: 2
   }
 });
