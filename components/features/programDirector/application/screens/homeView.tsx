@@ -1,44 +1,78 @@
 import { Link } from "expo-router";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { Button } from "react-native-paper";
+import { globalStyles } from "../../../auth/application/screens/loginView";
 
 export default function HomeView() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/createPartial"} style={styles.buttonText}>
+      <Button
+        buttonColor="#309b7b"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        <Link href={"/programDirector/createPartial"}>
           Crear Plantilla Parcial
         </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/approvedTemplate"} style={styles.buttonText}>
+      </Button>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/programDirector/approvedTemplate"}>
           Ver Plantillas Parciales Aprobadas
         </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/pendingTemplate"} style={styles.buttonText}>
+      </Button>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/programDirector/pendingTemplate"}>
           Ver Plantillas Parciales Pendientes
         </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/correctedTemplate"} style={styles.buttonText}>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+
+        <Link href={"/programDirector/pendingTemplate"}>
+          Ver Plantillas Parciales Pendientes
+        </Link>
+
+      </Button>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/programDirector/correctedTemplate"}>
           Ver Plantillas Parciales Por Corregir
         </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/teachingStaff"} style={styles.buttonText}>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/programDirector/teachingStaff"}>
           Plantillas Docentes
         </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.logoutButton}>
-        <Link href={"/auth/login"} style={styles.logoutButtonText}>
+      </Button>
+      <Button
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/auth/login"}>
           Salir
         </Link>
-      </TouchableOpacity>
+      </Button>
     </View>
   );
 }
@@ -48,11 +82,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#F5F5F5', 
+    backgroundColor: '#F5F5F5',
   },
   button: {
     width: '100%',
-    backgroundColor: '#32CD32', 
+    backgroundColor: '#32CD32',
     borderRadius: 10,
     paddingVertical: 15,
     marginVertical: 10,
