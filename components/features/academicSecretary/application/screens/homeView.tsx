@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import { Button } from "react-native-paper";
 import { globalStyles } from "../../../auth/application/screens/loginView";
 
