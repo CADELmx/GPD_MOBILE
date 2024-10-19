@@ -2,6 +2,7 @@ import { Link } from "expo-router";
 import { StyleSheet, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { Button, TextInput } from "react-native-paper";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function LoginView() {
   const [email, setEmail] = useState('');
@@ -9,46 +10,46 @@ export default function LoginView() {
 
   return (
     <ScrollView contentContainerStyle={globalStyles.scrollContainer}>
-      <View style={globalStyles.container}>
-        <Image
-          style={globalStyles.userImage}
-          source={require('../../../../../assets/images/foto.png')} // Imagen de ejemplo
-        />
+      <ThemedView style={globalStyles.container}>
+          <Image
+            style={globalStyles.userImage}
+            source={require('../../../../../assets/images/foto.png')} // Imagen de ejemplo
+          />
 
-        <TextInput
-          dense
-          mode="outlined"
-          label='Correo electrónico'
-          placeholder="Ingresa tu correo"
-          activeOutlineColor="#309b7b"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-        />
+          <TextInput
+            dense
+            mode="outlined"
+            label='Correo electrónico'
+            placeholder="Ingresa tu correo"
+            activeOutlineColor="#309b7b"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+          />
 
-        <TextInput
-          dense
-          mode="outlined"
-          activeOutlineColor="#309b7b"
-          label='Contraseña'
-          placeholder="Ingresa tu contraseña"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={true}
-        />
+          <TextInput
+            dense
+            mode="outlined"
+            activeOutlineColor="#309b7b"
+            label='Contraseña'
+            placeholder="Ingresa tu contraseña"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={true}
+          />
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
-          <Link href={"/programDirector/home"}>
-            Registrarse D.C.
-          </Link>
-        </Button>
+          <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
+            <Link href={"/programDirector/home"}>
+              Registrarse D.C.
+            </Link>
+          </Button>
 
-        <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
-          <Link href={"/academicSecretary/home"}>
-            Registrarse S.A.
-          </Link>
-        </Button>
-      </View>
+          <Button mode="contained-tonal" buttonColor="#309b7b" textColor="white" style={globalStyles.button}>
+            <Link href={"/academicSecretary/home"}>
+              Registrarse S.A.
+            </Link>
+          </Button>
+      </ThemedView>
     </ScrollView>
   );
 }
@@ -57,7 +58,6 @@ export const globalStyles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
   },
   container: {
     flex: 1,

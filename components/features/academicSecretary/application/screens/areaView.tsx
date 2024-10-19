@@ -1,17 +1,19 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import { Link } from "expo-router";
+import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
 
 export default function AreaView() {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Link href={"/"} style={styles.addLink}>
         Añadir Area
-      </Link> 
-      
+      </Link>
+
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>TECNOLOGÍAS DE LA INFORMACIÓN</Text>
+          <ThemedText style={styles.siglas}>TECNOLOGÍAS DE LA INFORMACIÓN</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -25,7 +27,7 @@ export default function AreaView() {
 
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>LENGUA INGLESA</Text>
+          <ThemedText style={styles.siglas}>LENGUA INGLESA</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -39,7 +41,7 @@ export default function AreaView() {
 
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>AGROBIOTECNOLOGÍA</Text>
+          <ThemedText style={styles.siglas}>AGROBIOTECNOLOGÍA</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -50,7 +52,7 @@ export default function AreaView() {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ThemedView>
   );
 }
 
@@ -58,17 +60,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#F5F5F5',
   },
   addLink: {
     marginBottom: 20,
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#32CD32',
+    color: '#309b7b',
     textAlign: 'right'
   },
   card: {
-    backgroundColor: '#FFFFFF',
     borderRadius: 10,
     padding: 15,
     marginBottom: 20,
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowOffset: { width: 0, height: 1 },
     shadowRadius: 4,
     elevation: 3,
   },

@@ -1,12 +1,11 @@
 import { Link } from "expo-router";
-import { View } from "react-native";
 import { Button } from "react-native-paper";
 import { globalStyles } from "../../../auth/application/screens/loginView";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
   return (
-    <View style={globalStyles.container}>
-
+    <ThemedView style={globalStyles.container}>
       <Button
         buttonColor="#309b7b"
         textColor="white"
@@ -73,6 +72,6 @@ export default function HomeView() {
           Salir
         </Link>
       </Button>
-    </View>
+    </ThemedView>
   );
 }
