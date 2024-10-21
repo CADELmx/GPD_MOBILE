@@ -30,7 +30,7 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
-        <Link href={"/academicSecretary/subject"}>
+        <Link href={"/academicSecretary/subjects/home"}>
           Materias
         </Link>
       </Button>
