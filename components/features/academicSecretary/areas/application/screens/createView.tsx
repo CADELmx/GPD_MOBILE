@@ -2,31 +2,33 @@ import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-nativ
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from 'expo-router';
+import { Button } from 'react-native-paper';
+import { globalStyles } from '../../../../auth/application/screens/loginView';
 
 export default function CreateAreaView() {
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.title}>Registrar Área</ThemedText>
-      
+
       <TextInput
         style={styles.input}
         placeholder="Nombre del Área"
       />
-      
+
       <View style={styles.buttonContainer}>
-      <Link href="/academicSecretary/areas/home" asChild>
-          <TouchableOpacity style={styles.registerButton}>
-            <Text style={styles.cancelButtonText}>Registrar</Text>
-          </TouchableOpacity>
+        <Link href="/academicSecretary/areas/home" asChild>
+          <Button style={globalStyles.button} buttonColor='#309b7b' textColor='white'>
+            Registrar
+          </Button>
         </Link>
 
         <Link href="/academicSecretary/areas/home" asChild>
-          <TouchableOpacity style={styles.cancelButton}>
-            <Text style={styles.cancelButtonText}>Cancelar</Text>
-          </TouchableOpacity>
+          <Button buttonColor='red' style={globalStyles.button} textColor='white'>
+            Cancelar
+          </Button>
         </Link>
       </View>
-      
+
     </ThemedView>
   );
 }
@@ -54,20 +56,5 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around'
-  },
-  cancelButton: {
-    backgroundColor: 'red',
-    padding: 10,
-    borderRadius: 8,
-  },
-  registerButton: {
-    backgroundColor: '#309b7b',
-    padding: 10,
-    borderRadius: 8,
-  },
-  cancelButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
