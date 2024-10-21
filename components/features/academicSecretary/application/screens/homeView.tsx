@@ -39,7 +39,7 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
-        <Link href={"/academicSecretary/area"}>
+        <Link href={"/academicSecretary/areas/home"}>
           Áreas
         </Link>
       </Button>
