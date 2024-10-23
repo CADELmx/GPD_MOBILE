@@ -29,21 +29,26 @@ export default function RootLayout() {
   const backgroundColor = useThemeColor({}, 'background');
   const textColor = useThemeColor({}, 'text');
   return (
-    <PaperProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack screenOptions={{
-          headerStyle: {
-            backgroundColor,
-          },
-          headerTintColor: textColor,
-        }}>
-          <Stack.Screen name='auth' options={{ headerShown: true }} />
-          <Stack.Screen name='programDirector' />
-          <Stack.Screen name="academicScretary" />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ThemeProvider>
+    <PaperProvider theme={{ dark: true }}>
+      <Stack screenOptions={{
+        headerStyle: {
+          backgroundColor,
+        },
+        headerTintColor: textColor,
+      }}>
+        <Stack.Screen name='auth' options={{ headerShown: true }} />
+        <Stack.Screen name='programDirector' />
+        <Stack.Screen name="auth/login" />
+        <Stack.Screen name="academicSecretary" />
+        <Stack.Screen name="+not-found" />
+        <Stack.Screen name="home" />
+        <Stack.Screen name="academicSecretary/area" />
+        <Stack.Screen name="academicSecretary/comments" />
+        <Stack.Screen name="academicSecretary/educationalPrograms" />
+        <Stack.Screen name="academicSecretary/subject" />
+        <Stack.Screen name="academicSecretary/teachingStaff" />
+        <Stack.Screen name="academicSecretary/users" />
+      </Stack>
     </PaperProvider>
   );
 }
