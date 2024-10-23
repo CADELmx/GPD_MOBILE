@@ -1,10 +1,10 @@
-import { Text, View } from "react-native";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function SubjectView(){
   return(
-    <View>
-      <Text> AQUI ESTARA EL DRUC COMPLETO DE MATERIAS </Text>
-    </View>
-      
+    <ThemedView>
+      <ThemedText> AQUI ESTARA EL DRUC COMPLETO DE MATERIAS </ThemedText>
+    </ThemedView>
   )
 }

@@ -4,8 +4,9 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { PaperProvider } from 'react-native-paper';
+import { useThemeColor } from '@/hooks/useThemeColor';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -25,16 +26,29 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-
+  const backgroundColor = useThemeColor({}, 'background');
+  const textColor = useThemeColor({}, 'text');
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name='auth'/>
-        <Stack.Screen name='programDirector'/>
-        <Stack.Screen name="academicScretary"/>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <PaperProvider theme={{ dark: true }}>
+      <Stack screenOptions={{
+        headerStyle: {
+          backgroundColor,
+        },
+        headerTintColor: textColor,
+      }}>
+        <Stack.Screen name='auth' options={{ headerShown: true }} />
+        <Stack.Screen name='programDirector' />
+        <Stack.Screen name="auth/login" />
+        <Stack.Screen name="academicSecretary" />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name="home" />
+        <Stack.Screen name="academicSecretary/area" />
+        <Stack.Screen name="academicSecretary/comments" />
+        <Stack.Screen name="academicSecretary/educationalPrograms" />
+        <Stack.Screen name="academicSecretary/subject" />
+        <Stack.Screen name="academicSecretary/teachingStaff" />
+        <Stack.Screen name="academicSecretary/users" />
       </Stack>
-    </ThemeProvider>
+    </PaperProvider>
   );
 }
