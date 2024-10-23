@@ -24,21 +24,50 @@ export function EducationalProgramDelete(){
             style={globalStyles.tile}
             > ¿Estas seguro de eliminar?</Text>
 
-        <Text style={globalStyles.text}>Selecciona un opción:</Text>
-
+        <View style={Styles.conten}>
                 <TouchableOpacity
-                style={globalStyles.boton}
+                style={Styles.botonC}
                 onPress={handleLogin}>
                 <Text style={globalStyles.textbo}>Cancelar</Text> 
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                style={globalStyles.boton}
+                style={Styles.botonE}
                 onPress={handleLogin}>
                 <Text style={globalStyles.textbo}>Eliminar</Text> 
                 </TouchableOpacity>
-
+         </View>
         </ThemedView>
     );
 }
 
+export const Styles = StyleSheet.create({
+  conten:{
+    flex:1,
+    flexDirection:"row"
+  },
+  botonC:{
+    width: "35%",
+    height: 40,
+    borderRadius: 10,
+    backgroundColor: "#309b7b",
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    //justifyContent: "center",
+    marginLeft:20,
+    marginRight:30,
+    marginBottom:20,
+  },
+  botonE:{
+    width: "35%",
+    height: 40,
+    borderRadius: 10,
+    backgroundColor: "red", 
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+   // justifyContent: "center",
+    marginLeft:20,
+    //marginRight:20,
+    marginBottom:20
+  },
+});
