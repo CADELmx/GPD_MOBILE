@@ -5,7 +5,7 @@ import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
   const goComments = () => router.push("/academicSecretary/comments");
-  const goEducationalPrograms = () => router.push("/academicSecretary/educationalPrograms");
+  const goEducationalPrograms = () => router.push("/academicSecretary/eduProg/home");
   const goSubject = () => router.push("/academicSecretary/subject");
   const goArea = () => router.push("/academicSecretary/area")
   const goBack = () => router.push("/auth/login")
@@ -27,7 +27,7 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
-        <Link href={"/academicSecretary/educationalPrograms"}>
+        <Link href={"/academicSecretary/eduProg/home"}>
           Programas Educativos
         </Link>
       </Button>
