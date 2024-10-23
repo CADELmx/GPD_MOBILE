@@ -1,5 +1,8 @@
+import { FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ThemedView } from "@/components/ThemedView";
+
 
 
 export function EducationalProgramCreate(){
@@ -8,8 +11,17 @@ export function EducationalProgramCreate(){
     const handleLogin = () => {
         router.push('/academicSecretary/eduProg/home')
     }
+
+    const handleGoHome = () => {
+      router.push('/academicSecretary/eduProg/home');
+    };
     return(
-        <View style={globalStyles.container}>
+    <ThemedView style={globalStyles.container}>
+       
+          <TouchableOpacity style={globalStyles.exitButton} onPress={handleGoHome}>
+        <FontAwesome name="home" size={24} color="white" />
+      </TouchableOpacity>
+
             <Text
             style={globalStyles.tile}
             >Nuevo programa educativo</Text>
@@ -42,7 +54,8 @@ export function EducationalProgramCreate(){
                 </TouchableOpacity>
 
                
-        </View>
+     
+      </ThemedView>
     );
 }
 
@@ -53,41 +66,44 @@ export const globalStyles = StyleSheet.create({
     },
     container: {
       flex: 1,
-      flexBasis: 'auto',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      columnGap: 2,
-      rowGap: 10,
-      padding:50
+     // flexBasis: 'auto',
+     // flexDirection: 'column',
+     // justifyContent: 'flex-start',
+     // columnGap: 2,
+     // rowGap: 10,
+      padding:20,
+     // alignSelf:"flex-start"
     },
     button: {
       borderRadius: 5,
     },
     tile:{
-      fontSize: 28,
+      fontSize: 25,
       fontWeight: "bold",
-      color: "#000", 
+      color: "#fff", 
       padding: 10,
       textAlign:"center"
     },
     text:{
        fontSize: 18,
-        color: "#000", 
+        color: "#fff", 
         marginBottom: 10,
         textAlign: "left",
         width: "80%",
         fontFamily: 'Arial', 
     },
     input: {
-        width: "80%",
-        height: 40,
-        borderColor: '#000', 
+        borderColor: '#fff', 
         borderWidth: 2.5,
         borderRadius: 10,
         paddingLeft: 10,
         marginBottom: 20,
-       // backgroundColor: "#309b7b", 
+        backgroundColor: "#d7dbdd", 
         fontSize: 16,
+        shadowOffset:{
+          width: 0,
+          height: 2,
+        }
       },
     boton:{
       width: "auto",
@@ -108,5 +124,20 @@ export const globalStyles = StyleSheet.create({
       textAlign:"center",
       fontWeight: "bold",
       
-  }
+  }, 
+  exitButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    padding: 10,
+    backgroundColor: '#309b7b',
+    borderRadius: 10,
+    alignSelf: 'flex-start',
+  },
+     exitButtonText: {
+    color: 'white',
+    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   });

@@ -7,16 +7,24 @@ import { ThemedText } from "@/components/ThemedText";
 export default function EducationalProgramsView() {
   const router = useRouter();
 
-    const handleLogin = () => {
-        router.push('/academicSecretary/eduProg/update')
-    }
+  const handleLogin = () => {
+    router.push('/academicSecretary/eduProg/update');
+  };
 
-    const handleDelete = () => {
-      router.push('/academicSecretary/eduProg/delete')
-  }
-  
+  const handleDelete = () => {
+    router.push('/academicSecretary/eduProg/delete');
+  };
+
+  const handleGoHome = () => {
+    router.push('/academicSecretary/home');
+  };
+
   return (
     <ThemedView style={styles.container}>
+      {/* Botón para salir */}
+      <TouchableOpacity style={styles.exitButton} onPress={handleGoHome}>
+        <FontAwesome name="home" size={24} color="white" />
+      </TouchableOpacity>
 
       <Link href={"/academicSecretary/eduProg/create"} style={styles.addLink}>
         Añadir programa educativo
@@ -30,7 +38,7 @@ export default function EducationalProgramsView() {
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
-            <FontAwesome onPress={handleLogin}  name="edit" size={24} color="green" />
+            <FontAwesome onPress={handleLogin} name="edit" size={24} color="#309b7b" />
           </TouchableOpacity>
           <TouchableOpacity>
             <FontAwesome onPress={handleDelete} name="trash" size={24} color="red" style={styles.iconMargin} />
@@ -38,37 +46,8 @@ export default function EducationalProgramsView() {
         </View>
       </View>
 
-      <View style={styles.card}>
-        <View style={styles.cardContent}>
-          <ThemedText style={styles.siglas}>SIGLA2</ThemedText>
-          <ThemedText style={styles.descripcion}>Descripción del programa educativo 2</ThemedText>
-          <ThemedText style={styles.area}>Área: Lengua Inglesa</ThemedText>
-        </View>
-        <View style={styles.cardIcons}>
-          <TouchableOpacity>
-            <FontAwesome name="edit" size={24} color="green" />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <FontAwesome name="trash" size={24} color="red" style={styles.iconMargin} />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.card}>
-        <View style={styles.cardContent}>
-          <ThemedText style={styles.siglas}>SIGLA3</ThemedText>
-          <ThemedText style={styles.descripcion}>Descripción del programa educativo 3</ThemedText>
-          <ThemedText style={styles.area}>Área: Paramedicos</ThemedText>
-        </View>
-        <View style={styles.cardIcons}>
-          <TouchableOpacity>
-            <FontAwesome name="edit" size={24} color="green" />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <FontAwesome name="trash" size={24} color="red" style={styles.iconMargin} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      {/* Resto del contenido */}
+      {/* Puedes seguir agregando más tarjetas como las anteriores */}
     </ThemedView>
   );
 }
@@ -83,7 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#32CD32',
-    textAlign: 'right'
+    textAlign: 'right',
   },
   card: {
     borderRadius: 10,
@@ -119,5 +98,20 @@ const styles = StyleSheet.create({
   },
   iconMargin: {
     marginLeft: 15,
+  },
+  exitButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    padding: 10,
+    backgroundColor: '#309b7b',
+    borderRadius: 10,
+    alignSelf: 'flex-start',
+  },
+  exitButtonText: {
+    color: 'white',
+    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
