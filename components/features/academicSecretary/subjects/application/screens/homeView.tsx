@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, Button, TouchableOpacity, ScrollView } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity, ScrollView } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { Picker } from "@react-native-picker/picker";
+import { Link } from "expo-router";
+import { Button } from "react-native-paper"
+import { globalStyles } from "../../../../auth/application/screens/loginView";
 
 export default function HomeSubjectView() {
   const [selectedCareer, setSelectedCareer] = useState("");
@@ -63,21 +66,29 @@ export default function HomeSubjectView() {
                   <Text style={styles.details}>Horas totales: {subject.totalHours}</Text>
                 </View>
                 <View style={styles.cardIcons}>
+                <Link href={"/academicSecretary/subjects/update"} asChild>
                   <TouchableOpacity>
                     <FontAwesome name="edit" size={24} color="green" />
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.iconMargin}>
-                    <FontAwesome name="trash" size={24} color="red" />
+                </Link>
+                
+                <Link href={"/academicSecretary/subjects/delete"} asChild>
+                  <TouchableOpacity>
+                    <FontAwesome name="trash" size={24} color="red" style={styles.iconMargin} />
                   </TouchableOpacity>
+                </Link>
                 </View>
               </View>
             ))}
           </View>
         ) : null}
 
-        <View style={styles.addButton}>
-          <Button title="Añadir nueva materia" color="#309b7b" onPress={() => {}} />
-        </View>
+        <Button 
+          buttonColor= "#309b7b"
+          textColor="white"
+          style={globalStyles.button}>
+          <Link href={"/academicSecretary/subjects/create"}> Añadir Materia</Link>
+        </Button>
       </ScrollView>
     </ThemedView>
   );
@@ -96,7 +107,8 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     marginBottom: 20,
-    borderColor: "#ccc",
+    shadowColor: '#309b7b',
+    backgroundColor: '#d7dbdd',
     borderWidth: 1,
   },
   sectionTitle: {

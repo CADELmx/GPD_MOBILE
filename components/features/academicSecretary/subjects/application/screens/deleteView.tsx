@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Modal, View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+import React from "react";
+import { Modal, View, StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
+import { Button } from "react-native-paper";
+import { globalStyles } from "../../../../auth/application/screens/loginView";
 
-export default function DeleteAreaView() {
+export default function DeleteSubjectView() {
   return (
     <ThemedView style={styles.container}>
       <Modal
@@ -12,19 +14,28 @@ export default function DeleteAreaView() {
         transparent={true}>
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
-            <ThemedText style={styles.modalText}>¿Está seguro de eliminar el área?</ThemedText>
+            <ThemedText style={styles.modalText}>¿Está seguro que desea eliminar la materia?</ThemedText>
+            <ThemedText style={styles.modalText2}>Esta acción no se puede revertir</ThemedText>
             <View style={styles.buttonContainer}>
-              <Link href={"/academicSecretary/areas/home"}>
-                <TouchableOpacity style={styles.cancelButton}>
-                  <Text style={styles.cancelButtonText}>Cancelar</Text>
-                </TouchableOpacity>
-              </Link>
+            <Button
+        buttonColor="red"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        <Link href={"/academicSecretary/subjects/home"}>
+          Eliminar
+        </Link>
+      </Button>
 
-              <Link href={"/academicSecretary/areas/home"}>
-                <TouchableOpacity style={styles.registerButton}>
-                  <Text style={styles.cancelButtonText}>Eliminar</Text>
-                </TouchableOpacity>
-              </Link>
+      <Button
+        buttonColor="#99a3a4"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        <Link href={"/academicSecretary/subjects/home"}>
+          Cancelar
+        </Link>
+      </Button>
             </View>
           </View>
         </View>
@@ -53,7 +64,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 5,
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
@@ -66,24 +77,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "black"
   },
+  modalText2: {
+    marginBottom: 10,
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "black"
+  },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
-  },
-  cancelButton: {
-    backgroundColor: '#309b7b',
-    padding: 10,
-    borderRadius: 8,
-  },
-  registerButton: {
-    backgroundColor: 'red',
-    padding: 10,
-    borderRadius: 8,
-  },
-  cancelButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
