@@ -48,6 +48,12 @@ export default function RootLayout() {
         <Stack.Screen name="academicSecretary/subject" />
         <Stack.Screen name="academicSecretary/teachingStaff" />
         <Stack.Screen name="academicSecretary/users" />
+        <Stack.Screen name="programDirector/home" />
+        <Stack.Screen name="programDirector/createPartial" />
+        <Stack.Screen name="programDirector/approvedTemplate" />
+        <Stack.Screen name="programDirector/correctedTemplate" />
+        <Stack.Screen name="programDirector/pendingTemplate" />
+        <Stack.Screen name="programDirector/teachingStaff" />
       </Stack>
     </PaperProvider>
   );
