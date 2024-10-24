@@ -46,7 +46,9 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
-        Áreas
+        <Link href={"/academicSecretary/area"}>
+          Áreas
+        </Link>
       </Button>
 
       <Button
