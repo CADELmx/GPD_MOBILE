@@ -1,10 +1,11 @@
-import { Text, View } from "react-native";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 
-export default function TeachingStaffView(){
-  return(
-    <View>
-      <Text> AQUI SE PODRAN LAS PLANTILLAS DOCENTES</Text>
-    </View>
-      
+export default function TeachingStaffView() {
+  return (
+    <ThemedView>
+      <ThemedText> AQUI SE PODRAN LAS PLANTILLAS DOCENTES</ThemedText>
+    </ThemedView>
+
   )
 }

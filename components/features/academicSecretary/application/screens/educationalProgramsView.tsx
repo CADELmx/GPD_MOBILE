@@ -1,19 +1,22 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import { Link } from "expo-router";
+import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
 
 export default function EducationalProgramsView() {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
+
       <Link href={"/"} style={styles.addLink}>
         Añadir programa educativo
-      </Link> 
+      </Link>
 
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>SIGLA1</Text>
-          <Text style={styles.descripcion}>Descripción del programa educativo 1</Text>
-          <Text style={styles.area}>Área: Tecnologias de la Información</Text>
+          <ThemedText style={styles.siglas}>SIGLA1</ThemedText>
+          <ThemedText style={styles.descripcion}>Descripción del programa educativo 1</ThemedText>
+          <ThemedText style={styles.area}>Área: Tecnologias de la Información</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -27,9 +30,9 @@ export default function EducationalProgramsView() {
 
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>SIGLA2</Text>
-          <Text style={styles.descripcion}>Descripción del programa educativo 2</Text>
-          <Text style={styles.area}>Área: Lengua Inglesa</Text>
+          <ThemedText style={styles.siglas}>SIGLA2</ThemedText>
+          <ThemedText style={styles.descripcion}>Descripción del programa educativo 2</ThemedText>
+          <ThemedText style={styles.area}>Área: Lengua Inglesa</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -43,9 +46,9 @@ export default function EducationalProgramsView() {
 
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.siglas}>SIGLA3</Text>
-          <Text style={styles.descripcion}>Descripción del programa educativo 3</Text>
-          <Text style={styles.area}>Área: Paramedicos</Text>
+          <ThemedText style={styles.siglas}>SIGLA3</ThemedText>
+          <ThemedText style={styles.descripcion}>Descripción del programa educativo 3</ThemedText>
+          <ThemedText style={styles.area}>Área: Paramedicos</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
@@ -56,7 +59,7 @@ export default function EducationalProgramsView() {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ThemedView>
   );
 }
 
@@ -64,7 +67,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#F5F5F5',
   },
   addLink: {
     marginBottom: 20,
@@ -74,7 +76,6 @@ const styles = StyleSheet.create({
     textAlign: 'right'
   },
   card: {
-    backgroundColor: '#FFFFFF',
     borderRadius: 10,
     padding: 15,
     marginBottom: 20,
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.5,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     elevation: 3,
@@ -97,12 +98,10 @@ const styles = StyleSheet.create({
   },
   descripcion: {
     fontSize: 14,
-    color: '#666',
     marginBottom: 5,
   },
   area: {
     fontSize: 14,
-    color: '#888',
   },
   cardIcons: {
     flexDirection: 'row',

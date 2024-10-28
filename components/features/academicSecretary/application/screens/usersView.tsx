@@ -1,10 +1,10 @@
-import { Text, View } from "react-native";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function UsersView(){
   return(
-    <View>
-      <Text> AQUI SE PODRAN VISUALIZAR ALGUNOS DATOS DE USUARIOS REGISTRADOS (CORREO Y NT)</Text>
-    </View>
-      
+    <ThemedView>
+      <ThemedText> AQUI SE PODRAN VISUALIZAR ALGUNOS DATOS DE USUARIOS REGISTRADOS (CORREO Y NT)</ThemedText>
+    </ThemedView>      
   )
 }
