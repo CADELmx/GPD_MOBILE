@@ -1,4 +1,4 @@
-import { API_URL } from "../../../../../constants/api";
+import { API_URL } from "../../../../../../constants/api";
 import { PartialTemplate } from "../../domain/entities/PartialTemplate";
 
 export class PartialTemplatesDatasourceImp implements PartialTemplatesDatasourceImp {
