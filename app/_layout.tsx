@@ -42,7 +42,7 @@ export default function RootLayout() {
         <Stack.Screen name="academicSecretary" />
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="home" />
-        <Stack.Screen name="academicSecretary/area" />
+        <Stack.Screen name="academicSecretary/areas/home" />
         <Stack.Screen name="academicSecretary/comments" />
         <Stack.Screen name="academicSecretary/eduProg/home" />
         <Stack.Screen name="academicSecretary/subject" />

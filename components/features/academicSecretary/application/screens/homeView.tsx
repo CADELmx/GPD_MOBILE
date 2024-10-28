@@ -7,7 +7,7 @@ export default function HomeView() {
   const goComments = () => router.push("/academicSecretary/comments");
   const goEducationalPrograms = () => router.push("/academicSecretary/eduProg/home");
   const goSubject = () => router.push("/academicSecretary/subject");
-  const goArea = () => router.push("/academicSecretary/area")
+  const goArea = () => router.push("/academicSecretary/areas/home")
   const goBack = () => router.push("/auth/login")
   const goUsers = () => router.push("/academicSecretary/users")
   const goTeachingStaff = () => router.push("/academicSecretary/teachingStaff")
@@ -46,7 +46,7 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
-        <Link href={"/academicSecretary/area"}>
+        <Link href={"/academicSecretary/areas/home"}>
           Áreas
         </Link>
       </Button>
