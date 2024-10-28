@@ -38,7 +38,7 @@ export default function RootLayout() {
           headerTintColor: textColor,
         }}>
           <Stack.Screen name='auth' options={{ headerShown: true }} />
-          <Stack.Screen name='programDirector' />
+          <Stack.Screen name='programDirector'/>
           <Stack.Screen name="academicScretary" />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
