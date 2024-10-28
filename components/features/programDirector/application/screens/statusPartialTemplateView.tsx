@@ -5,7 +5,7 @@ import { ThemedView } from '../../../../ThemedView';
 import { PartialTemplate } from '../../partialTemplate/domain/entities/PartialTemplate';
 import { PartialTemplatesDatasourceImp } from '../../partialTemplate/infraestructure/datasource/PartialTemplateDatasourceImp';
 
-const PartialTemplatesListView = () => {
+const StatusPartialTemplateView = () => {
   const [templates, setTemplates] = useState<PartialTemplate[]>([]);
   const [selectedStatus, setSelectedStatus] = useState<string>('aprobado');
 
@@ -106,4 +106,4 @@ const globalStyles = StyleSheet.create({
   },
 });
 
-export default PartialTemplatesListView;
+export default StatusPartialTemplateView;
