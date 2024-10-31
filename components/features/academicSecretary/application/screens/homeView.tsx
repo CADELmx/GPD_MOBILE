@@ -10,7 +10,7 @@ export default function HomeView() {
   const goArea = () => router.push("/academicSecretary/areas/home")
   const goBack = () => router.push("/auth/login")
   const goUsers = () => router.push("/academicSecretary/users")
-  const goTeachingStaff = () => router.push("/academicSecretary/teachingStaff")
+  const goTeachingTemplates = () => router.push("/academicSecretary/teachingTemplates/home")
   return (
     <ThemedView style={globalStyles.container}>
       <Button
@@ -63,11 +63,12 @@ export default function HomeView() {
       </Button>
 
       <Button
-        onPress={goTeachingStaff}
+        onPress={goTeachingTemplates}
         buttonColor="#309b7b"
         style={globalStyles.button}
         textColor="white"
-      >
+      > 
+        <Link href={"/academicSecretary/teachingTemplates/home"}></Link>
         Ver Plantillas Docentes
       </Button>
       <Button
