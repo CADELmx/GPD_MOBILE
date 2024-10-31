@@ -9,7 +9,7 @@ export default function HomeView() {
   const goSubject = () => router.push("/academicSecretary/subjects/home");
   const goArea = () => router.push("/academicSecretary/areas/home")
   const goBack = () => router.push("/auth/login")
-  const goUsers = () => router.push("/academicSecretary/users")
+  const goUsers = () => router.push("/academicSecretary/users/home")
   const goTeachingTemplates = () => router.push("/academicSecretary/teachingTemplates/home")
   return (
     <ThemedView style={globalStyles.container}>
@@ -59,7 +59,9 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       >
+        <Link href={"/academicSecretary/users/home"}>
           Ver Usuarios
+        </Link>
       </Button>
 
       <Button
@@ -68,8 +70,9 @@ export default function HomeView() {
         style={globalStyles.button}
         textColor="white"
       > 
-        <Link href={"/academicSecretary/teachingTemplates/home"}></Link>
+        <Link href={"/academicSecretary/teachingTemplates/home"}>
         Ver Plantillas Docentes
+        </Link>
       </Button>
       <Button
         onPress={goBack}
