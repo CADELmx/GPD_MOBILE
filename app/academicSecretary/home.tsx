@@ -1,4 +1,4 @@
-import HomeView from "../../components/features/academicSecretary/application/screens/homeView";
+import HomeView from "../../components/features/academicSecretary/homeView";
 
 export default function HomeScreen(){
   return(

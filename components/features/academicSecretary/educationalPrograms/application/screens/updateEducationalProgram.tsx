@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { globalStyles } from "../../../eduProg/application/screens/create";
+import { globalStyles } from "./createEducationalProgram";
 import { ThemedView } from "@/components/ThemedView";
 
 
