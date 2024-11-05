@@ -1,4 +1,4 @@
-import CreateAreaView from "../../../components/features/academicSecretary/areas/application/screens/createView";
+import CreateAreaView from "../../../components/features/academicSecretary/areas/application/screens/createAreaView";
 
 export default function CreateAreaScreen(){
   return(
