@@ -46,7 +46,6 @@ export default function RootLayout() {
         <Stack.Screen name="academicSecretary/comments" />
         <Stack.Screen name="academicSecretary/eduProg/home" />
         <Stack.Screen name="academicSecretary/subjects/home" />
-        
         <Stack.Screen name="academicSecretary/teachingStaff" />
         <Stack.Screen name="academicSecretary/users" />
         <Stack.Screen name="programDirector/home" />
