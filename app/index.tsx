@@ -13,7 +13,7 @@ export default function IndexApp(){
 
   useEffect(() => {
     setLoaded(true);
-  }, [loaded]);
+  }, []);
 
   return(
     <View>
