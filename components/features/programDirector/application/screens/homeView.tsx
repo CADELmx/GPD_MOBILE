@@ -1,77 +1,69 @@
-import { Link } from "expo-router";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { Link, router } from "expo-router";
+import { StyleSheet } from "react-native";
+import { Button } from "react-native-paper";
+import { globalStyles } from "../../../auth/application/screens/loginView";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
+  const goCreatePartial = () => router.push('/programDirector/createPartial')
+  const goApprovedTemplate = () => router.push('/programDirector/approvedTemplate')
+  const goPendingTemplate = () => router.push('/programDirector/pendingTemplate')
+  const goCorrectedTemplate = () => router.push('/programDirector/correctedTemplate')
+  const goTeachingStaff = () => router.push('/programDirector/teachingStaff')
+  const goBack = () => router.push('/auth/login')
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/createPartial"} style={styles.buttonText}>
-          Crear Plantilla Parcial
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/approvedTemplate"} style={styles.buttonText}>
+    <ThemedView style={globalStyles.container}>
+      <Button
+        onPress={goCreatePartial}
+        buttonColor="#309b7b"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        Crear Plantilla Parcial
+      </Button>
+      <Button
+        onPress={goApprovedTemplate}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
           Ver Plantillas Parciales Aprobadas
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/pendingTemplate"} style={styles.buttonText}>
+      </Button>
+      <Button
+        onPress={goPendingTemplate}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
           Ver Plantillas Parciales Pendientes
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/correctedTemplate"} style={styles.buttonText}>
+      </Button>
+      <Button
+        onPress={goCorrectedTemplate}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/programDirector/correctedTemplate"}>
           Ver Plantillas Parciales Por Corregir
         </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/programDirector/teachingStaff"} style={styles.buttonText}>
+      <Button
+        onPress={goTeachingStaff}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
           Plantillas Docentes
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.logoutButton}>
-        <Link href={"/auth/login"} style={styles.logoutButtonText}>
+      </Button>
+      <Button
+        onPress={goBack}
+        buttonColor="#EB1414FF"
+        style={globalStyles.button}
+        textColor="white"
+      >
           Salir
-        </Link>
-      </TouchableOpacity>
-    </View>
+      </Button>
+    </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5', 
-  },
-  button: {
-    width: '100%',
-    backgroundColor: '#32CD32', 
-    borderRadius: 10,
-    paddingVertical: 15,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-  },
-  logoutButton: {
-    width: '100%',
-    backgroundColor: '#FF6347',
-    borderRadius: 10,
-    paddingVertical: 15,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  logoutButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-  },
-});

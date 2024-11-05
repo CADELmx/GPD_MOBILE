@@ -1,7 +1,8 @@
-import CreatePartialView from "../../components/features/programDirector/application/screens/createPartialView";
+import StatusPartialTemplateView from "../../components/features/programDirector/application/screens/statusPartialTemplateView";
+
 
 export default function CreatePartialScreen(){
   return (
-    <CreatePartialView/>
+    <StatusPartialTemplateView/>
   )
 }

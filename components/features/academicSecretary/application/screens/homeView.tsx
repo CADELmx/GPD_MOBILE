@@ -1,84 +1,83 @@
-import { Link } from "expo-router";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Link, router } from "expo-router";
+import { Button } from "react-native-paper";
+import { globalStyles } from "../../../auth/application/screens/loginView";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
+  const goComments = () => router.push("/academicSecretary/comments");
+  const goEducationalPrograms = () => router.push("/academicSecretary/eduProg/home");
+  const goSubject = () => router.push("/academicSecretary/subjects/home");
+  const goArea = () => router.push("/academicSecretary/areas/home")
+  const goBack = () => router.push("/auth/login")
+  const goUsers = () => router.push("/academicSecretary/users")
+  const goTeachingStaff = () => router.push("/academicSecretary/teachingStaff")
   return (
-    <View style={styles.container}>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/comments"} style={styles.buttonText}>
-          Ver Plantillas Parciales
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/educationalPrograms"} style={styles.buttonText}>
+    <ThemedView style={globalStyles.container}>
+      <Button
+        onPress={goComments}
+        buttonColor="#309b7b"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        Ver Plantillas Parciales
+      </Button>
+      <Button
+        onPress={goEducationalPrograms}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/academicSecretary/eduProg/home"}>
           Programas Educativos
         </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/subject"} style={styles.buttonText}>
+      <Button
+        onPress={goSubject}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/academicSecretary/subjects/home"}>
           Materias
         </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/area"} style={styles.buttonText}>
+      </Button>
+      <Button
+        onPress={goArea}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        <Link href={"/academicSecretary/areas/home"}>
           Áreas
         </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/users"} style={styles.buttonText}>
+      <Button
+        onPress={goUsers}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
           Ver Usuarios
-        </Link>
-      </TouchableOpacity>
+      </Button>
 
-      <TouchableOpacity style={styles.button}>
-        <Link href={"/academicSecretary/teachingStaff"} style={styles.buttonText}>
-          Ver Plantillas Docentes
-        </Link>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.logoutButton}>
-        <Link href={"/auth/login"} style={styles.logoutButtonText}>
-          Salir
-        </Link>
-      </TouchableOpacity>
-    </View>
+      <Button
+        onPress={goTeachingStaff}
+        buttonColor="#309b7b"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        Ver Plantillas Docentes
+      </Button>
+      <Button
+        onPress={goBack}
+        buttonColor="#EB1414FF"
+        style={globalStyles.button}
+        textColor="white"
+      >
+        Salir
+      </Button>
+    </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-  },
-  button: {
-    width: '100%',
-    backgroundColor: '#32CD32',
-    borderRadius: 10,
-    paddingVertical: 15,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-  },
-  logoutButton: {
-    width: '100%',
-    backgroundColor: '#FF6347', 
-    borderRadius: 10,
-    paddingVertical: 15,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  logoutButtonText: {
-    color: '#FFFFFF', 
-  },
-});
