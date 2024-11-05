@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { SegmentedButtons, Text } from 'react-native-paper';
-import { ThemedView } from '../../../../ThemedView';
-import { PartialTemplate } from '../../partialTemplate/domain/entities/PartialTemplate';
-import { PartialTemplatesDatasourceImp } from '../../partialTemplate/infraestructure/datasource/PartialTemplateDatasourceImp';
+import { PartialTemplate } from '../../domain/entities/PartialTemplate';
+import { PartialTemplatesDatasourceImp } from '../../infraestructure/datasource/PartialTemplateDatasourceImp';
+import { ThemedView } from '../../../../../ThemedView';
 
 const StatusPartialTemplateView = () => {
   const [templates, setTemplates] = useState<PartialTemplate[]>([]);

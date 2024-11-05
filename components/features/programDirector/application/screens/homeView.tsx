@@ -5,7 +5,7 @@ import { globalStyles } from "../../../auth/application/screens/loginView";
 import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
-  const goCreatePartial = () => router.push('/programDirector/createPartial')
+  const goStatusPartialTemplate = () => router.push('/programDirector/partialTemplate/status')
   const goApprovedTemplate = () => router.push('/programDirector/approvedTemplate')
   const goPendingTemplate = () => router.push('/programDirector/pendingTemplate')
   const goCorrectedTemplate = () => router.push('/programDirector/correctedTemplate')
@@ -14,12 +14,12 @@ export default function HomeView() {
   return (
     <ThemedView style={globalStyles.container}>
       <Button
-        onPress={goCreatePartial}
+        onPress={goStatusPartialTemplate}
         buttonColor="#309b7b"
         textColor="white"
         style={globalStyles.button}
       >
-        Crear Plantilla Parcial
+        Estado de la Plantilla Parcial
       </Button>
       <Button
         onPress={goApprovedTemplate}
