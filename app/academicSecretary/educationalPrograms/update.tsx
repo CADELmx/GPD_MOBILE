@@ -1,4 +1,4 @@
-import { EducationalProgramUpdate } from "../../../components/features/academicSecretary/educationalPrograms/application/screens/updateEducationalProgramView";
+import { EducationalProgramUpdate } from "@academicSecretary/educationalPrograms/application/screens/updateEducationalProgramView";
 
 export default function updateScreen(){
     return(

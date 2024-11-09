@@ -1,4 +1,4 @@
-import HomeAreaView from "../../../components/features/academicSecretary/areas/application/screens/homeAreaView";
+import HomeAreaView from "@academicSecretary/areas/application/screens/homeAreaView";
 
 export default function HomeAreaScreen(){
   return(

@@ -1,4 +1,4 @@
-import { EducationalProgramCreate } from "../../../components/features/academicSecretary/educationalPrograms/application/screens/createEducationalProgramView";
+import { EducationalProgramCreate } from "@academicSecretary/educationalPrograms/application/screens/createEducationalProgramView";
 
 
 export default function createScreen(){

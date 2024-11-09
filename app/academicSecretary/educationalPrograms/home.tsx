@@ -1,4 +1,4 @@
-import EducationalProgramsView from "../../../components/features/academicSecretary/educationalPrograms/application/screens/homeEducationalProgramView";
+import EducationalProgramsView from "@academicSecretary/educationalPrograms/application/screens/homeEducationalProgramView";
 
 
 export default function EducationalProgramsScreen(){
