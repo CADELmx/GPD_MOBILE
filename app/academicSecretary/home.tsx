@@ -1,7 +1,7 @@
-import HomeView from "../../components/features/academicSecretary/homeView";
+import HomeAcademicSecretaryView from "../../components/features/academicSecretary/homeAcademicSecretaryView";
 
 export default function HomeScreen(){
   return(
-    <HomeView/>
+    <HomeAcademicSecretaryView/>
   )
 }

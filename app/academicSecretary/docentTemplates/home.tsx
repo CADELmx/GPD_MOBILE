@@ -1,8 +1,8 @@
-import HomeTeachingTemplatesView from "../../../components/features/academicSecretary/docentTemplates/application/screens/homeView";
+import HomeDocentTemplatesView from "../../../components/features/academicSecretary/docentTemplates/application/screens/homeDocentTemplatesView";
 
-export default function HomeTeachingTemplatesScreen(){
+export default function HomeDocentTemplatesScreen(){
   return(
-    <HomeTeachingTemplatesView/>
+    <HomeDocentTemplatesView/>
       
   )
 }

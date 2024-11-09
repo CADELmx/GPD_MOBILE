@@ -3,7 +3,7 @@ import { Button } from "react-native-paper";
 import { globalStyles } from "../auth/application/screens/loginView";
 import { ThemedView } from "@/components/ThemedView";
 
-export default function HomeView() {
+export default function HomeAcademicSecretaryView() {
   const goComments = () => router.push("/academicSecretary/comments");
   const goEducationalPrograms = () => router.push("/academicSecretary/eduProg/home");
   const goSubject = () => router.push("/academicSecretary/subjects/home");
