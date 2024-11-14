@@ -1,6 +1,6 @@
-import CreateSubjectView from "../../../components/features/academicSecretary/subjects/application/screens/createView";
+import CreateSubjectView from "@academicSecretary/subjects/application/screens/createSubjectView";
 
-export default function CrateSubjectScreen(){
+export default function createSubjectScreen(){
   return(
     <CreateSubjectView/>
       

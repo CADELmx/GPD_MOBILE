@@ -1,6 +1,6 @@
-import HomeSubjectView from "../../../components/features/academicSecretary/subjects/application/screens/homeView";
+import HomeSubjectView from "@academicSecretary/subjects/application/screens/homeSubjectView";
 
-export default function HomeSubjectScreen(){
+export default function homeSubjectScreen(){
   return(
     <HomeSubjectView/>
       

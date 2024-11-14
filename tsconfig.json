@@ -2,10 +2,13 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./*"
-      ]
+        "./*",
+      ],
+      "@academicSecretary/*": [ "./components/features/academicSecretary/*" ],
+      "@programDirector/*": [ "./components/features/programDirector/*" ],
     }
   },
   "include": [

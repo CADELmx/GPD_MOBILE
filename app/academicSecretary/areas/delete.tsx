@@ -1,6 +1,6 @@
-import DeleteAreaView from "../../../components/features/academicSecretary/areas/application/screens/deleteView";
+import DeleteAreaView from "@academicSecretary/areas/application/screens/deleteAreaView";
 
-export default function DeleteAreaScreen(){
+export default function deleteAreaScreen(){
   return(
     <DeleteAreaView/>
       

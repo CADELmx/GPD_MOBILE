@@ -1,6 +1,6 @@
-import UpdateSubjectView from "../../../components/features/academicSecretary/subjects/application/screens/updateView";
+import UpdateSubjectView from "@academicSecretary/subjects/application/screens/updateSubjectView";
 
-export default function UpdateSubjectScreen(){
+export default function updateSubjectScreen(){
   return(
     <UpdateSubjectView/>
       
