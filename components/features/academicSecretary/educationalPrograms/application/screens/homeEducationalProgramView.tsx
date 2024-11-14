@@ -7,26 +7,17 @@ import { ThemedText } from "@/components/ThemedText";
 export default function EducationalProgramsView() {
   const router = useRouter();
 
-  const handleLogin = () => {
-    router.push('/academicSecretary/eduProg/update');
-  };
-
-  const handleDelete = () => {
-    router.push('/academicSecretary/eduProg/delete');
-  };
-
-  const handleGoHome = () => {
-    router.push('/academicSecretary/home');
-  };
-
   return (
     <ThemedView style={styles.container}>
       {/* Botón para salir */}
-      <TouchableOpacity style={styles.exitButton} onPress={handleGoHome}>
+      <TouchableOpacity
+        style={styles.exitButton}
+        onPress={() => { router.push("/academicSecretary/home") }}
+      >
         <FontAwesome name="home" size={24} color="white" />
       </TouchableOpacity>
 
-      <Link href={"/academicSecretary/eduProg/create"} style={styles.addLink}>
+      <Link href={"/programDirector/educationalPrograms/create"} style={styles.addLink}>
         Añadir programa educativo
       </Link>
 
@@ -34,14 +25,25 @@ export default function EducationalProgramsView() {
         <View style={styles.cardContent}>
           <ThemedText style={styles.siglas}>SIGLA1</ThemedText>
           <ThemedText style={styles.descripcion}>Descripción del programa educativo 1</ThemedText>
-          <ThemedText style={styles.area}>Área: Tecnologias de la Información</ThemedText>
+          <ThemedText style={styles.area}>Área: Tecnologías de la Información</ThemedText>
         </View>
         <View style={styles.cardIcons}>
           <TouchableOpacity>
-            <FontAwesome onPress={handleLogin} name="edit" size={24} color="#309b7b" />
+            <FontAwesome
+              onPress={() => { router.push("/academicSecretary/educationalPrograms/update") }}
+              name="edit"
+              size={24}
+              color="#309b7b"
+            />
           </TouchableOpacity>
           <TouchableOpacity>
-            <FontAwesome onPress={handleDelete} name="trash" size={24} color="red" style={styles.iconMargin} />
+            <FontAwesome
+              onPress={() => { router.push("/programDirector/educationalPrograms/delete") }}
+              name="trash"
+              size={24}
+              color="red"
+              style={styles.iconMargin}
+            />
           </TouchableOpacity>
         </View>
       </View>

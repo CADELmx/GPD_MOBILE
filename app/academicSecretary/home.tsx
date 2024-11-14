@@ -1,6 +1,6 @@
 import HomeAcademicSecretaryView from "../../components/features/academicSecretary/homeAcademicSecretaryView";
 
-export default function HomeScreen(){
+export default function homeScreen(){
   return(
     <HomeAcademicSecretaryView/>
   )

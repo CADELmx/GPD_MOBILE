@@ -1,11 +1,11 @@
 import { Link, router } from "expo-router";
 import { StyleSheet } from "react-native";
 import { Button } from "react-native-paper";
-import { globalStyles } from "../../../auth/application/screens/loginView";
+import { globalStyles } from "../auth/application/screens/loginView";
 import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeView() {
-  const goStatusPartialTemplate = () => router.push('/programDirector/partialTemplate/status')
+  const goStatusPartialTemplate = () => router.push('/programDirector/partialTemplates/status')
   const goApprovedTemplate = () => router.push('/programDirector/approvedTemplate')
   const goPendingTemplate = () => router.push('/programDirector/pendingTemplate')
   const goCorrectedTemplate = () => router.push('/programDirector/correctedTemplate')

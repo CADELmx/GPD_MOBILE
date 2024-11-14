@@ -9,7 +9,7 @@ const areas = [
   { name: "Ciencias", status: "Aprobado", responsible: "Carlos García" },
 ];
 
-export default function HomeDocentTemplatesView() {
+export default function HomeDocentTemplateView() {
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.title}>Plantillas Docentes</ThemedText>

@@ -1,10 +1,10 @@
-
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
-export default function CreateDocentTemplatesView() {
+
+export default function DeletePartialTemplateView() {
   return (
     <ThemedView>
-      <ThemedText> AQUÍ SERÁ LA VISTA PARA CREAR LAS PLANTILLAS DE DOCENTES </ThemedText>
+      <ThemedText> AQUÍ SE ELIMINARÁN LAS PLANTILLAS PARCIALES </ThemedText>
     </ThemedView>
   )
 }

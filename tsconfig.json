@@ -8,6 +8,7 @@
         "./*",
       ],
       "@academicSecretary/*": [ "./components/features/academicSecretary/*" ],
+      "@programDirector/*": [ "./components/features/programDirector/*" ],
     }
   },
   "include": [
