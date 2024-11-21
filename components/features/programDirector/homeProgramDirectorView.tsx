@@ -14,12 +14,20 @@ export default function HomeView() {
   return (
     <ThemedView style={globalStyles.container}>
       <Button
-        onPress={goStatusPartialTemplate}
+        onPress={()=> router.push('/programDirector/partialTemplates/status')}
         buttonColor="#309b7b"
         textColor="white"
         style={globalStyles.button}
       >
         Estado de la Plantilla Parcial
+      </Button>
+      <Button
+        onPress={()=> router.push('/programDirector/areas/home')}
+        buttonColor="#309b7b"
+        textColor="white"
+        style={globalStyles.button}
+      >
+        Areas
       </Button>
       <Button
         onPress={goApprovedTemplate}
